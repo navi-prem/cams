@@ -1,3 +1,4 @@
+import Script from 'next/script'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -16,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className + ' h-[100vh] w-[100vw]'}>
+        <Script src="https://checkout.razorpay.com/v1/checkout.js"></Script>
+        {children}
+      </body>
     </html>
   )
 }
